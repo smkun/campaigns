@@ -50,7 +50,8 @@ function Dice() {
 
   const roll2d20 = () => {
     const d20Rolls = [];
-    for (let i = 0; i < quantity; i++) {
+    const adjustedQuantity = Math.max(2, Math.min(5, quantity));
+    for (let i = 0; i < adjustedQuantity; i++) {
       d20Rolls.push(Math.floor(Math.random() * 20) + 1);
     }
     setResult(`d20 Rolls: ${d20Rolls.join(', ')}`);
